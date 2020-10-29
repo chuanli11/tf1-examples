@@ -246,7 +246,6 @@ def mnist_mlp(x, input_flattened_dim, num_classes):
 
     return logits
 
-num_gpus = 2
 input_flattened_dim = 784
 num_classes = 10
 learning_rate = .0001
@@ -265,7 +264,7 @@ with tf.Session() as sess:
     for i in range(max_steps):
         print(i)
         # batch_x, batch_y = sess.run(next_element)
-        batch_x, batch_y = mnist.train.next_batch(batch_size * num_gpus)
+        batch_x, batch_y = mnist.train.next_batch(batch_size)
         # print(type(batch_x))
         # print(batch_x.shape)
         # print(type(batch_y))
